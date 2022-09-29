@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", function(event) {
       document.addEventListener("DOMContentLoaded", function (event) {
         let targetImage = document.querySelector("#smart-image");
         targetImage.addEventListener("click", function () {
@@ -10,4 +9,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         });
     });
-});
