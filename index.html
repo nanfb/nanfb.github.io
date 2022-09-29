@@ -9,6 +9,11 @@
     <title>OnePiece</title>
 </head>
     <script src="thumbnail.js"></script>
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+/>
 <style>
     
 
@@ -29,7 +34,7 @@
             </ul>
         </aside>
         <article>
-            <div>
+            <div id="waline">
                内容
             </div>
         </article>
@@ -38,5 +43,15 @@
         for <a href="https://www.adalab.cn" target="_blank">Adalab</a>
     </footer>
 </body>
+    <script>
+    import { init } from '@waline/client';
 
+import '@waline/client/dist/waline.css';
+
+init({
+  el: '#waline',
+  // ...
+});
+
+    </script>
 </html>
