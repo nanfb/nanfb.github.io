@@ -5,27 +5,26 @@
 <head>
     <meta charset="utf-8">
     <link href="https://www.adalab.cn/admission.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
     <title>OnePiece</title>
 </head>
-    <script src="thumbnail.js"></script>
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <link
-  rel="stylesheet"
-  href="https://unpkg.com/@waline/client@v2/dist/waline.css"
-/>
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
 <style>
-    
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-    header {
-        width: 100%;
-        height: 300px;
+    ul,
+    li,
+    ol {
+        list-style: none;
     }
 </style>
 
 <body>
     <header>
-        <img id="smart-image" class="small" width="100%" height="100%" src="https://i02piccdn.sogoucdn.com/2981a07c30b136e2" alt="">
+        <img width="100%" height="100%" src="https://i02piccdn.sogoucdn.com/2981a07c30b136e2" alt="">
     </header>
     <main>
         <aside>
@@ -35,7 +34,7 @@
         </aside>
         <article>
             <div id="waline">
-               内容
+
             </div>
         </article>
     </main>
@@ -43,15 +42,26 @@
         for <a href="https://www.adalab.cn" target="_blank">Adalab</a>
     </footer>
 </body>
-    <script>
-    import { init } from '@waline/client';
 
-import '@waline/client/dist/waline.css';
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        let targetImage = document.querySelector("#smart-image");
+        targetImage.addEventListener("click", function () {
+            if (targetImage.classList.contains("small")) {
+                targetImage.classList.remove("small");
+            } else {
+                targetImage.classList.add("small");
 
-init({
-  el: '#waline',
-  // ...
-});
+            }
+        });
+    });
 
-    </script>
+
+    Waline.init({
+        el: '#waline',
+        serverURL: 'https://your-domain.vercel.app',
+    });
+
+</script>
+
 </html>
