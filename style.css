@@ -1,7 +1,14 @@
 a:hover{
   color:green
 }
-
+* {
+        margin: 0;
+        padding: 0;
+    }
+    
+    ul,li,ol{
+        list-style:none;
+    }
     body,main{
         display:flex;
     }
